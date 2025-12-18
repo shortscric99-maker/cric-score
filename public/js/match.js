@@ -10,12 +10,12 @@ import { toCSV, downloadFile } from "./utils.js";
 
 const firebaseConfig = {
   // same config as app.js
-  apiKey: "REPLACE",
-  authDomain: "REPLACE.firebaseapp.com",
-  projectId: "REPLACE",
-  storageBucket: "REPLACE.appspot.com",
-  messagingSenderId: "REPLACE",
-  appId: "REPLACE"
+  apiKey: "AIzaSyArSAU4igEY7LKfx-G2kE8kEj9msssK9hs",
+  authDomain: "cric-scorer-fc6ab.firebaseapp.com",
+  projectId: "cric-scorer-fc6ab",
+  storageBucket: "cric-scorer-fc6ab.firebasestorage.app",
+  messagingSenderId: "763007551778",
+  appId: "1:763007551778:web:c876262a3cff1fee813d7b"
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
