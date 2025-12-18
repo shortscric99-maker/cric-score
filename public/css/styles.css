@@ -1,0 +1,30 @@
+:root{
+  --bg:#fff; --fg:#111; --muted:#666; --accent:#0b6;
+  --card-bg:#f9f9fb;
+  --max-width:960px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  margin:0;padding:1rem;background:var(--bg);color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--max-width);margin:0 auto;}
+.app-header{display:flex;flex-direction:column;gap:.25rem}
+.lead{color:var(--muted)}
+.card{background:var(--card-bg);padding:1rem;border-radius:10px;margin:1rem 0}
+.btn{display:inline-block;padding:.5rem .75rem;border-radius:8px;border:1px solid #ddd;background:transparent;cursor:pointer}
+.btn.primary{background:var(--accent);color:white;border:none}
+.teams-row{display:flex;gap:.5rem}
+.match-header{display:flex;flex-direction:column;gap:.25rem}
+.score-banner{background:#0b6;color:white;padding:.75rem;border-radius:8px;margin:0.5rem 0}
+.match-main{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:900px){
+  .match-main{grid-template-columns:320px 1fr 360px}
+}
+.row{display:flex;gap:.5rem;align-items:center}
+.form-actions{display:flex;gap:.5rem;margin-top:.5rem}
+#balls-list{max-height:50vh;overflow:auto}
+.ball-item{padding:.5rem;border-bottom:1px solid #eee}
+kbd{background:#eee;border-radius:4px;padding:.1rem .3rem;font-size:.9em}
