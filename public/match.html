@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta id="og-title" property="og:title" content="">
+  <title id="page-title">Match</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="match-header">
+      <h1 id="match-title">Loading…</h1>
+      <div id="meta-line"></div>
+      <div class="actions">
+        <button id="btn-edit-mode" class="btn">Scorer Mode</button>
+        <button id="btn-export" class="btn">Export JSON/CSV</button>
+        <button id="btn-share" class="btn">Share</button>
+      </div>
+    </header>
+
+    <section id="score-banner" class="score-banner" aria-live="polite">
+      <!-- dynamic scoreboard -->
+    </section>
+
+    <main class="match-main">
+      <aside id="scorer-panel" class="card" hidden>
+        <h2>Scoring Controls</h2>
+        <form id="ball-form" aria-label="Enter ball details">
+          <div class="row">
+            <label>Runs <input name="runs" type="number" min="0" max="10" value="0" required></label>
+            <label>Extras
+              <select name="extra">
+                <option value="">None</option>
+                <option value="wide">Wide</option>
+                <option value="noball">No-ball</option>
+                <option value="bye">Bye</option>
+                <option value="legbye">Leg-bye</option>
+                <option value="penalty">Penalty</option>
+              </select>
+            </label>
+          </div>
+
+          <label>Dismissal
+            <select name="wicketType">
+              <option value="">None</option>
+              <option value="bowled">Bowled</option>
+              <option value="caught">Caught</option>
+              <option value="lbw">LBW</option>
+              <option value="runout">Run out</option>
+              <option value="stumped">Stumped</option>
+              <option value="hitwicket">Hit wicket</option>
+              <option value="retired">Retired hurt</option>
+            </select>
+          </label>
+
+          <div id="dismissal-meta"></div>
+
+          <div class="form-actions">
+            <button id="btn-save-ball" class="btn primary">Save Ball</button>
+            <button id="btn-undo" type="button" class="btn">Undo Last Ball</button>
+          </div>
+        </form>
+      </aside>
+
+      <section id="timeline" class="card" aria-live="polite">
+        <h2>Ball-by-ball</h2>
+        <div id="balls-list"></div>
+      </section>
+
+      <section id="scorecards" class="card">
+        <h2>Scorecard</h2>
+        <div id="batting-card"></div>
+        <div id="bowling-card"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/match.js"></script>
+</body>
+</html>
