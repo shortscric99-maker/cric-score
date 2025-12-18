@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Cricket Scorer — Create or Join Match</title>
+  <meta name="description" content="Create and score cricket matches ball-by-ball in realtime.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="app-header">
+      <h1>Cricket Scorer</h1>
+      <p class="lead">Realtime ball-by-ball scoring — mobile-first, offline-friendly.</p>
+    </header>
+
+    <section id="auth-section" aria-live="polite">
+      <button id="btn-anon" class="btn">Continue as Scorer (Anonymous)</button>
+      <button id="btn-google" class="btn">Sign in with Google</button>
+      <div id="user-info" hidden></div>
+    </section>
+
+    <section id="create-match" class="card">
+      <h2>Create Match</h2>
+      <form id="match-form">
+        <label>Title <input name="title" required></label>
+        <label>Match Type
+          <select name="type">
+            <option>T20</option><option>ODI</option><option>Test</option><option>Custom</option>
+          </select>
+        </label>
+        <div class="teams-row">
+          <label>Team 1 <input name="team1" required></label>
+          <label>Team 2 <input name="team2" required></label>
+        </div>
+        <label>Overs per innings (0 = unlimited) <input name="overs" type="number" min="0" value="20"></label>
+        <label>Date <input name="date" type="date"></label>
+        <label>Start time <input name="time" type="time"></label>
+
+        <label>Privacy
+          <select name="privacy">
+            <option value="public">Public (anyone can view)</option>
+            <option value="private">Private (invite only)</option>
+          </select>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Create Match</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="discover" class="card">
+      <h2>Find a match</h2>
+      <input id="search" placeholder="Search match slug or title" />
+      <div id="matches-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
